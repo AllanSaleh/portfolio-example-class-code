@@ -2,7 +2,9 @@
 
 :root {
   --primary-color: rgb(255, 133, 68);
-  --secondary-color: rgb(44, 154, 68);
+  --secondary-color: rgb(255, 251, 246);
+
+  --accent-color: rgb(255, 192, 158);
 }
 
 * {
@@ -12,4 +14,99 @@
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: 'wdth' 100;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* NAVBAR */
+header {
+  background-color: black;
+  padding: 0 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  height: 7vh;
+  border-bottom: 1px solid gray;
+}
+
+.nav-links {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: auto 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: grey;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.logo {
+  color: var(--primary-color);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  font-size: 30px;
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .intro {
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 7vh 0;
+  }
+  .my-img {
+    min-width: 150px;
+    height: 150px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  /* When checkbox is checked, show menu */
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
 }
